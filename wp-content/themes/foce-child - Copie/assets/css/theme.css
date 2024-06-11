@@ -1,0 +1,437 @@
+@charset "UTF-8";
+/*animation de logo et background video*/
+.banner__video {
+  position: absolute;
+  display: block;
+  min-width: 100%;
+  min-height: 100%;
+  animation: bas 2s 300ms both;
+}
+
+.banner__logo {
+  position: sticky;
+  top: 80px;
+  z-index: 10;
+  opacity: 1;
+  padding-bottom: 120px;
+  animation:  2s 300ms both, flotte 6s 2s infinite ease-in-out;
+}
+
+.banner__video {
+  z-index: -1;
+  opacity: 1;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.banner {
+  background-image: none;
+  position: relative;
+  -o-object-fit: contain;
+     object-fit: contain;
+  height: 800px;
+}
+
+/* Pour flotter  */
+@keyframes flotte {
+  0% {
+    transform: translate3d(6px, 6px, 0);
+  }
+  12% {
+    transform: translate3d(0px, 6px, 0);
+  }
+  24% {
+    transform: translate3d(6px, -4px, 0);
+  }
+  36% {
+    transform: translate3d(6px, 0px, 0);
+  }
+  48% {
+    transform: translate3d(-4px, -6px, 0);
+  }
+  60% {
+    transform: translate3d(0px, -4px, 0);
+  }
+  72% {
+    transform: translate3d(-8px, 6px, 0);
+  }
+  84% {
+    transform: translate3d(-4px, 0px, 0);
+  }
+  100% {
+    transform: translate3d(6px, 6px, 0);
+  }
+}
+/*la fleure de footer*/
+ul::after {
+  z-index: -1;
+  position: absolute;
+  left: calc(50% - 323px);
+  bottom: -28.5em;
+  animation: rotate 5s linear infinite;
+}
+
+
+/* deplacer les element vers le bas  */
+@keyframes bas {
+  0% {
+    transform: translateY(-300px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    visibility: visible;
+  }
+}
+/* deplacer les element vers le haut  */
+@keyframes haut {
+  0% {
+    transform: translateY(600px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+
+
+/*animation des fleures*/
+
+
+@keyframes rotate {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
+
+#studio h2::before {
+  animation: rotate 5s linear infinite;
+}
+
+#studio h2::after {
+  animation: rotate 5s linear infinite;
+}
+
+.site-footer::after {
+  animation: rotate 5s linear infinite;
+}
+
+.site-footer::before {
+  animation: rotate 5s linear infinite;
+}
+
+.story__article::after {
+  animation: rotate 5s linear infinite;
+}
+
+.story h2::after {
+  animation: rotate 5s linear infinite;
+}
+
+
+
+/*nomination des titres*/
+h2 span, h3 span {
+  display: inline-block;
+}
+
+.story #characters {
+  display: inline-block;
+}
+
+/*nomination oscars*/
+.nom-osca {
+  position: relative;
+  padding: 150px 0 50px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.oscr-nomination {
+  position: relative;
+}
+
+.oscr-nomination img {
+  height: 100%;
+}
+
+.oscr-nomination h3 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  line-height: 3.2rem;
+  text-align: left;
+  font-size: 2.8em min-width 700px;
+}
+
+.nom-osca img {
+  height: 100%;
+}
+
+/*déplacement des fleures dans un autre section*/
+.nom-osca::before {
+  content: url("../images/Sunflower.png");
+  position: absolute;
+  left: 5em;
+  top: 0em;
+  animation: rotate 5s linear infinite;
+}
+
+.nom-osca::after {
+  content: url("../images/orchid.png");
+  position: absolute;
+  right: -4em;
+  top: -3em;
+  animation: rotate 5s linear infinite;
+}
+
+.site-footer::before {
+  content: "";
+}
+
+.site-footer::after {
+  content: "";
+}
+
+/* les nuages      */
+.story #place {
+  position: relative;
+  background-image: url("../images/Studio_Koukaki-image_place.png");
+  z-index: -1;
+ 
+}
+
+
+@keyframes deplacement {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(300px); }
+  }
+  
+ 
+#place .nuage-1,
+#place .nuage-2 {
+  position: absolute;
+  -moz-filter: blur(15px);
+  filter: blur(15px);
+  z-index: 2;
+  
+}
+
+#place .nuage-1 {
+  height: 122px;
+  top: 70px;
+  right: 90px;
+
+}
+
+#place .nuage-2 {
+  height: 55px;
+  top: 250px;
+  right: 500px;
+
+}
+
+.story #place h3 {
+  min-width: 300px;
+}
+
+/*swiper*/
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: auto;
+  text-align: center;
+  font-size: 18px;
+  justify-content: center;
+}
+
+.story #characters {
+  position: relative;
+  margin-bottom: 0 !important;
+  z-index: 20;
+  padding-top: 150px;
+}
+
+.story #characters div {
+  flex: none;
+  display: flex;
+  justify-content: center;
+}
+
+.swiper {
+  width: 100%;
+  opacity: 1;
+  margin-bottom: 7em;
+  overflow: hidden;
+}
+
+.swiper-slide figure {
+  display: block;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/* MENU BURGER */
+/* Hide all links except N3 */
+.first-menu li:not(:nth-child(3)) {
+  display: none;
+}
+
+/* Style for the open menu */
+.opened-menu {
+  width: 100%;
+  height: 100vh;
+  background-color: #fff5e9;
+  color: black;
+}
+
+/* Small logo in the open menu */
+.menu-img {
+  width: 12%;
+  margin: auto;
+  padding-top: 1%;
+  padding-bottom: 2%;
+  filter: drop-shadow(0px 0.273343px 0px #ffe600);
+}
+
+/* Modify display and style of the link list */
+.liste-burger {
+  display: flex;
+  flex-direction: column;
+}
+
+.liste-burger li {
+  font-size: 64px;
+  line-height: 84px;
+  padding-bottom: 1%;
+}
+
+.liste-burger li a:hover {
+  color: black;
+  text-shadow: 0px 0px 14px #ff5c00;
+}
+
+/* Modify style of the footer link in the open menu */
+.footer-link {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.burger-menu-footer-link {
+  padding-top: 4%;
+  width: 160px;
+  list-style: none;
+}
+
+.burger-menu-footer-link a {
+  text-decoration: none;
+}
+
+/* Style for the small bars of the burger button */
+.main-navigation .bar {
+  height: 3px;
+  background-color: #000;
+  display: block;
+  margin-block: 2px;
+  width: 20px;
+}
+
+/* Position of the burger button */
+.bouton-burger {
+  position: absolute;
+  cursor: pointer;
+  left: 90%;
+  top: 45%;
+}
+
+/* Cross menu animation */
+.bar:not(:nth-child(2)) {
+  transition: 0.4s;
+}
+
+.change .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.bar:nth-child(2) {
+  transition: 0.2s;
+}
+
+/* Rotation of the top and bottom bars */
+.change .bar:first-child {
+  transform: rotate(-45deg) translate(0px, 0px);
+}
+
+.change .bar:last-child {
+  transform: rotate(45deg) translate(-7px, -7px);
+}
+
+/* Cats and flowers in the open menu */
+.images-menu img {
+  position: absolute;
+}
+
+.images-menu .chat {
+  width: 8%;
+}
+
+.mauve {
+  top: 20em;
+  left: 100em;
+  width: 5%;
+  animation: rotate 5s linear infinite;
+}
+
+.violette {
+  top: 10em;
+  left: -5em;
+  animation: rotate 5s linear infinite;
+}
+
+.hibiscus {
+  top: 33em;
+  left: 79em;
+  animation: rotate 5s linear infinite;
+}
+
+.tournesol {
+  top: 12em;
+  left: 74em;
+  animation: rotate 5s linear infinite;
+}
+
+.jaune {
+  top: 32em;
+  left: 23em;
+  width: 6%;
+  animation: rotate 5s linear infinite;
+}
+
+.bleu {
+  top: 25em;
+  left: 5em;
+  animation: haut 2s 300ms both, flotte 6s 2s infinite ease-in-out;
+}
+
+.noir {
+  left: 60em;
+  top: 30em;
+  animation: haut 2s 300ms both, flotte 6s 2s infinite ease-in-out;
+}
+
+.orange {
+  top: 35em;
+  animation: haut 2s 300ms both, flotte 6s 2s infinite ease-in-out;
+}/*# sourceMappingURL=theme.css.map */
